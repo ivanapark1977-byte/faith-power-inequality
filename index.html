@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faith, Power and Inequality | The Anglophone Blind Spot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a18;
+            --red: #A32D2D;
+            --bg: #fafaf7;
+            --border: #e8e6e1;
+            --accent-warm: #d4a574;
+            --accent-muted: #8a7968;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.7;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+        
+        /* Masthead */
+        .masthead {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 2px solid var(--ink);
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .masthead-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .masthead-tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--red);
+        }
+        
+        /* Cover Section */
+        .cover {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 2rem;
+            border-bottom: 2px solid var(--ink);
+            background: linear-gradient(135deg, var(--bg) 0%, #f5f3ed 100%);
+        }
+        
+        .cover-kicker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 2rem;
+        }
+        
+        .cover-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .cover-subtitle {
+            font-family: 'Source Serif 4', serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--accent-muted);
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+        
+        .cover-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-muted);
+        }
+        
+        /* Key Findings Box */
+        .key-findings {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 3rem 2rem;
+            margin: 0;
+            border-bottom: 2px solid var(--ink);
+        }
+        
+        .key-findings h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--accent-warm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .finding-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .finding-item {
+            border-left: 3px solid var(--red);
+            padding-left: 1.5rem;
+        }
+        
+        .finding-value {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--bg);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        
+        .finding-label {
+            font-family: 'Source Serif 4', serif;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--bg);
+            opacity: 0.9;
+        }
+        
+        .finding-note {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(250, 250, 247, 0.2);
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+        
+        /* Content Container */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        /* Section Styling */
+        .section {
+            margin-bottom: 5rem;
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        
+        .section-number {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 4rem;
+            color: var(--red);
+            opacity: 0.2;
+            line-height: 1;
+            margin-bottom: -0.5rem;
+        }
+        
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+        
+        .section h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--red);
+        }
+        
+        .section p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        .section strong {
+            font-weight: 700;
+            color: var(--ink);
+        }
+        
+        /* Data Box */
+        .data-box {
+            background: linear-gradient(135deg, #f5f3ed 0%, var(--bg) 100%);
+            border-left: 4px solid var(--red);
+            padding: 2rem;
+            margin: 3rem 0;
+            font-family: 'Source Serif 4', serif;
+        }
+        
+        .data-box-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 1rem;
+        }
+        
+        .data-box-content {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 2.5rem 0;
+            border: 2px solid var(--border);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        thead {
+            background: var(--ink);
+            color: var(--bg);
+        }
+        
+        th {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 2px solid var(--red);
+        }
+        
+        td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border);
+            font-family: 'Source Serif 4', serif;
+        }
+        
+        tbody tr:hover {
+            background: #f5f3ed;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Callout Quote */
+        .callout {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--ink);
+            color: var(--bg);
+            font-size: 1.2rem;
+            font-style: italic;
+            border-left: 6px solid var(--red);
+            line-height: 1.6;
+        }
+        
+        /* Sources Section */
+        .sources {
+            background: #f5f3ed;
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+            border-top: 2px solid var(--ink);
+        }
+        
+        .sources-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .sources h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .sources h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            color: var(--red);
+        }
+        
+        .sources ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .sources li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .sources li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 2rem;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+        
+        .footer-divider {
+            margin: 1rem 0;
+            opacity: 0.3;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .masthead {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .cover {
+                padding: 3rem 1.5rem;
+            }
+            
+            .content {
+                padding: 3rem 1.5rem;
+            }
+            
+            .section-number {
+                font-size: 3rem;
+            }
+            
+            .finding-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="masthead-title">THE ANGLOPHONE BLIND SPOT</div>
+        <div class="masthead-tagline">Geopolitics · Energy · Defence</div>
+    </header>
+
+    <!-- Cover Section -->
+    <section class="cover">
+        <div class="cover-kicker">Research Report</div>
+        <h1 class="cover-title">Faith, Power and Inequality</h1>
+        <div class="cover-subtitle">The Philippine Oligarchy, Religion and Structural Harm</div>
+        <div class="cover-meta">The Anglophone Blind Spot | April 2026</div>
+    </section>
+
+    <!-- Key Findings -->
+    <section class="key-findings">
+        <h2>Key Findings At A Glance</h2>
+        <div class="finding-grid">
+            <div class="finding-item">
+                <div class="finding-value">$312B – $450B</div>
+                <div class="finding-label">total harm attributed to oligarchic families — approximately 70% of 2024 GDP</div>
+            </div>
+            <div class="finding-item">
+                <div class="finding-value">75,000 – 110,000</div>
+                <div class="finding-label">lives lost, directly and structurally, to the same concentration of wealth</div>
+            </div>
+            <div class="finding-item">
+                <div class="finding-value">50 / 50</div>
+                <div class="finding-label">Forbes-listed oligarchic families — all nominally Roman Catholic</div>
+            </div>
+            <div class="finding-item">
+                <div class="finding-value">5th globally</div>
+                <div class="finding-label">Philippines' ranking among the most religious nations on earth (Gallup, 68 countries)</div>
+            </div>
+            <div class="finding-item">
+                <div class="finding-value">0.04%</div>
+                <div class="finding-label">irreligion rate — without meaningful parallel in the Catholic world</div>
+            </div>
+        </div>
+        <div class="finding-note">
+            All financial harm figures are analytical estimates carrying wide confidence intervals and are not legal findings. All individuals are presumed innocent unless convicted. See Section IX for methodology.
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Section I -->
+        <article class="section">
+            <div class="section-number">I</div>
+            <h2>Introduction</h2>
+            <p>The Philippines presents one of the most striking paradoxes in contemporary political economy: a society of exceptional, demonstrably intense religious devotion that is simultaneously one of the most unequal in Asia. This report examines the intersection — not merely coincidental but structural — between concentrated wealth, organised religion, and entrenched harm. Its central argument is that the two are not in tension. They are the same system.</p>
+            <p>All fifty of the country's wealthiest families publicly identify as Roman Catholic. The Catholic Church holds the highest institutional trust in the Philippines at eighty percent, and is simultaneously a major stockholder in companies controlled by those same families. The doctrinal tools to challenge oligarchic extraction — formally, unambiguously set out in the Catechism of the Catholic Church — have been systematically withheld from Filipino popular catechesis for five hundred years. What replaced them was a theology of fatalism and ritual without doctrine, installed by Spanish colonial missionaries and never corrected by their successors.</p>
+            <p>This report draws on wealth audit data, Catechism of the Catholic Church provisions, Pew Research Center and Gallup religiosity surveys, CBCP pastoral statements, US federal court proceedings, econometric analysis of voting patterns, and academic literature on Philippine folk Catholicism, liberation theology, and colonial religious history.</p>
+            <p>All financial estimates carry confidence intervals and are sourced to their methodological origins. All harm figures are analytical estimates, not legal findings. All individuals are presumed innocent unless convicted.</p>
+        </article>
+
+        <!-- Section II -->
+        <article class="section">
+            <div class="section-number">II</div>
+            <h2>The Scale of Wealth Concentration and Harm</h2>
+            
+            <h3>Headline Numbers</h3>
+            <p>The Philippines' fifty wealthiest families hold Forbes-listed assets of $86 billion, approximately twenty percent of 2024 GDP. When offshore holdings, nominee structures, and private assets are incorporated, estimated true wealth rises to $170–$200 billion — roughly forty-five percent of GDP. The official income Gini coefficient of 0.3909, published by the Philippine Statistics Authority in 2023, substantially understates real inequality. Incorporating offshore wealth produces an estimated wealth Gini of 0.83–0.88, placing the Philippines among the most unequal countries on earth.</p>
+            <p>The midpoint estimate of total harm attributed to the top oligarchic families stands at $312 billion, approximately seventy percent of one year's GDP, distributed across three categories: lives lost (75,000–110,000), direct financial extraction ($65–$115 billion), and structural and opportunity cost ($158–$244 billion). The Marcos family alone accounts for approximately $140 billion of this total, including 40,000–75,000 estimated deaths during martial law.</p>
+            
+            <h3>The OFW Comparison</h3>
+            <p>The most forensically powerful frame compares oligarchic extraction against the labour of the Philippine diaspora. OFW remittances totalled $38.3 billion in 2024, rising to a record $39.6 billion in 2025. Power oligarchs — Aboitiz, San Miguel Corporation, Lopez — extract approximately $8 billion per year through electricity overpricing relative to ASEAN benchmarks. That single rent equals twenty-one percent of all remittances.</p>
+            
+            <div class="data-box">
+                <div class="data-box-title">Critical Finding</div>
+                <div class="data-box-content">
+                    <strong>The total modelled oligarchic harm equals approximately 195 years of current grant-equivalent overseas development assistance at $1.6 billion per year. Power oligarchs extract five times more annually than the Philippines receives in foreign grants.</strong>
+                </div>
+            </div>
+            
+            <p>The OFW worker who attends Mass before her departure has no doctrinal framework — because none was given to her — to understand that the company absorbing twenty-one percent of what she sends home is committing a grave structural sin under her own professed faith.</p>
+        </article>
+
+        <!-- Section III -->
+        <article class="section">
+            <div class="section-number">III</div>
+            <h2>All Fifty Families: Nominally Catholic</h2>
+            <p>Analysis of the Forbes Philippines 50 Richest list yields a finding that is itself analytically significant: on a nominal basis, every ranked family, plus the unranked Marcos family, publicly identifies as Roman Catholic. The monochromatic result — fifty families, fifty Catholics — encapsulates the central structural problem: the Catholic Church is financially dependent on precisely the families whose conduct its own doctrine requires it to challenge.</p>
+            <p>Many Tsinoy (Chinese-Filipino) families maintain private syncretic practices incorporating Buddhism, Taoism, and Confucian ancestor veneration alongside nominal Catholic affiliation. For published investigative purposes, nominal affiliation — the publicly professed faith that creates doctrinal accountability — is the operative standard. One exception within the Villar family: Senator Cynthia Villar is affiliated with the Protestant UCCP.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Family / Group</th>
+                            <th>Primary Sector</th>
+                            <th>SHS Score</th>
+                            <th>Nominal Religion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1†</td>
+                            <td>Marcos family</td>
+                            <td>Government / nominee</td>
+                            <td>9.8 — S</td>
+                            <td>Roman Catholic</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Manuel Villar</td>
+                            <td>Real estate</td>
+                            <td>9.1 — S</td>
+                            <td>Roman Catholic</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Enrique Razon Jr.</td>
+                            <td>Ports / gaming / utilities</td>
+                            <td>9.0 — S</td>
+                            <td>Roman Catholic</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Ramon Ang (SMC)</td>
+                            <td>Infrastructure / power / food</td>
+                            <td>8.7 — S</td>
+                            <td>Roman Catholic</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Lucio Tan</td>
+                            <td>Tobacco / aviation</td>
+                            <td>8.7 — S</td>
+                            <td>Roman Catholic</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Consunji siblings</td>
+                            <td>Mining / construction</td>
+                            <td>8.0 — S</td>
+                            <td>Roman Catholic</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Cojuangco family</td>
+                            <td>Diversified / agriculture</td>
+                            <td>8.0 — S</td>
+                            <td>Roman Catholic</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Aboitiz family</td>
+                            <td>Power / banking</td>
+                            <td>8.0 — S</td>
+                            <td>Roman Catholic</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Zobel de Ayala</td>
+                            <td>Real estate / telecoms</td>
+                            <td>7.8 — S</td>
+                            <td>Roman Catholic</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Ty siblings</td>
+                            <td>Banking / automotive</td>
+                            <td>7.3 — A</td>
+                            <td>Roman Catholic</td>
+                        </tr>
+                        <tr>
+                            <td>11–14</td>
+                            <td>Yuchengco, GMA trio, Sy siblings, Tanco</td>
+                            <td>Banking / media / retail / gambling</td>
+                            <td>7.0–7.3 — A</td>
+                            <td>Roman Catholic (all)</td>
+                        </tr>
+                        <tr>
+                            <td>15–49</td>
+                            <td>B-, C-, D-Tier (35 families)</td>
+                            <td>Various</td>
+                            <td>2.2–6.4</td>
+                            <td>Roman Catholic (all)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.85rem; font-style: italic; margin-top: 1rem;">† Not Forbes-listed; wealth held through nominee structures. Sources: Forbes Asia 2025; author analysis.</p>
+        </article>
+
+        <!-- Section IV -->
+        <article class="section">
+            <div class="section-number">IV</div>
+            <h2>Mapping Conduct Against Catholic Doctrine</h2>
+            
+            <h3>The Three-Level Doctrinal Framework</h3>
+            <p>Roman Catholic doctrine applicable to the conduct documented in the wealth audit operates on three levels. The Seven Deadly Sins (CCC 1866) are capital sins because they engender all other sins. The Sins That Cry to Heaven (CCC 1867) include wilful murder, oppression of the poor, and defrauding workers of wages. The Modern Social Sins, formally added by the Vatican in 2008, explicitly include excessive wealth accumulation and social injustice as mortal-level offences.</p>
+            <p>Three specific Catechism provisions are directly operative. CCC 1867 — the cry of the people oppressed — maps onto OFW remittances absorbed by electricity overpricing. CCC 1868, responsibility for the sins of others, applies to those who order, approve, or protect evildoers — directly implicating the GMA Network trio whose coverage rehabilitated the Marcos record. CCC 2409 prohibits any form of unjustly keeping property or charging unjust prices, a direct prohibition on monopoly rent extraction by Razon, Aboitiz, and San Miguel Corporation.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Family</th>
+                            <th>Primary Conduct</th>
+                            <th>Capital Sin(s)</th>
+                            <th>Sins Crying to Heaven</th>
+                            <th>Social Sin (2008)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Marcos family</td>
+                            <td>Mass theft; 40–75k deaths; EJKs; torture</td>
+                            <td>Greed, Pride, Wrath</td>
+                            <td>Wilful murder; oppression of poor; defrauding state</td>
+                            <td>Excessive wealth; social injustice</td>
+                        </tr>
+                        <tr>
+                            <td>Manuel Villar</td>
+                            <td>SEC fraud ($14–20B); C-5 road self-enrichment; dynasty capture</td>
+                            <td>Greed, Pride</td>
+                            <td>Defrauding public; regulatory capture</td>
+                            <td>Excessive wealth; social injustice</td>
+                        </tr>
+                        <tr>
+                            <td>Enrique Razon Jr.</td>
+                            <td>Port monopoly; water capture; electricity overpricing</td>
+                            <td>Greed, Sloth</td>
+                            <td>Defrauding consumers via captive pricing</td>
+                            <td>Excessive wealth; social injustice</td>
+                        </tr>
+                        <tr>
+                            <td>Ramon Ang / SMC</td>
+                            <td>Infrastructure monopolies; regulatory capture</td>
+                            <td>Greed, Pride</td>
+                            <td>Oppression via energy overpricing</td>
+                            <td>Social injustice</td>
+                        </tr>
+                        <tr>
+                            <td>Lucio Tan</td>
+                            <td>Tobacco (5–15k attributed deaths); tax evasion</td>
+                            <td>Greed</td>
+                            <td>Wilful harm to life; defrauding state</td>
+                            <td>Social injustice</td>
+                        </tr>
+                        <tr>
+                            <td>Aboitiz family</td>
+                            <td>Power monopoly; ~$8B/yr extraction</td>
+                            <td>Greed, Sloth</td>
+                            <td>Oppression via essential service monopoly</td>
+                            <td>Social injustice</td>
+                        </tr>
+                        <tr>
+                            <td>Zobel de Ayala</td>
+                            <td>Colonial land grants; BVI trusts</td>
+                            <td>Greed, Pride</td>
+                            <td>Persistent structural injustice</td>
+                            <td>Social injustice</td>
+                        </tr>
+                        <tr>
+                            <td>GMA Network trio</td>
+                            <td>Marcos rehabilitation; disinformation</td>
+                            <td>Pride, Greed</td>
+                            <td>Complicity in political violence</td>
+                            <td>Social injustice</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.85rem; font-style: italic; margin-top: 1rem;">Sources: Catechism of the Catholic Church (CCC 1866, 1867, 1868, 2409); Vatican 2008; HRW; OHCHR; SEC Philippines. Analytical estimates only. All persons presumed innocent until convicted.</p>
+            
+            <h3>Performance Versus Compartmentalisation</h3>
+            <p>The evidence does not support the charge that oligarchs observe religion only for show — that formulation implies conscious hypocrisy requiring evidence of private rejection of publicly performed belief. What the evidence supports is compartmentalised religiosity, a well-documented academic phenomenon. The correct framework is split-level Christianity, coined by Jesuit theologian Jaime Bulatao: two incompatible value systems coexisting without cognitive dissonance, neither experienced as contradicting the other.</p>
+            <p>The Villar church donation crystallises the structural analysis. The PHP 615 million 2024 donation consisted primarily of 1.2 hectares of land inside a Vista Land residential development — simultaneously a religious donation and a real estate amenity. At a peak net worth of $17.3 billion, this represents 0.003% of wealth. The Catholic Church's Catechism requires restitution of unjust gains before all else. The SEC criminal complaint alleges $14–20 billion in fraud. The mathematics speak for themselves.</p>
+            <p>The CBCP's November 2025 doctrinal guidance formally named the mechanism: retrospective complicity — the Church belatedly acknowledging it has benefited from morally compromised sources.</p>
+        </article>
+
+        <!-- Section V -->
+        <article class="section">
+            <div class="section-number">V</div>
+            <h2>Philippine Religiosity: The Global Picture</h2>
+            
+            <h3>Global Standing</h3>
+            <p>The Philippines is the fifth most religious country on earth by Gallup International survey across sixty-eight countries, with ninety percent of respondents declaring themselves religious. Pew Research Center finds that eighty-eight percent of Filipino Christians report religion as very important in their lives — exceeded only by Kenya among Christian-majority nations. The Philippines hosts four percent of the world's 2.18 billion Christians, ranks first in Asia and fifth globally in absolute Christian population, and has an irreligion rate of 0.04% — without meaningful parallel in the Catholic world.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Country</th>
+                            <th>% Declaring Religious</th>
+                            <th>Dominant Faith</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Thailand</td>
+                            <td>98%</td>
+                            <td>Buddhism</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Nigeria</td>
+                            <td>97%</td>
+                            <td>Islam / Christianity</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3=</td>
+                            <td>Kosovo / India / Ghana</td>
+                            <td>94%</td>
+                            <td>Islam / Hinduism / Christianity</td>
+                            <td></td>
+                        </tr>
+                        <tr style="background: rgba(163, 45, 45, 0.1);">
+                            <td><strong>5</strong></td>
+                            <td><strong>Philippines</strong></td>
+                            <td><strong>90%</strong></td>
+                            <td>Roman Catholicism</td>
+                            <td>1st in Asia; 5th globally</td>
+                        </tr>
+                        <tr>
+                            <td>—</td>
+                            <td>Brazil</td>
+                            <td>87%</td>
+                            <td>Roman Catholicism</td>
+                            <td>Fellow Catholic nation</td>
+                        </tr>
+                        <tr>
+                            <td>—</td>
+                            <td>USA</td>
+                            <td>55%</td>
+                            <td>Christianity (plural)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>—</td>
+                            <td>Italy</td>
+                            <td>~40%</td>
+                            <td>Roman Catholicism</td>
+                            <td>Historic heartland</td>
+                        </tr>
+                        <tr>
+                            <td>—</td>
+                            <td>Spain</td>
+                            <td>~30%</td>
+                            <td>Roman Catholicism</td>
+                            <td>Post-Franco rapid decline</td>
+                        </tr>
+                        <tr>
+                            <td>—</td>
+                            <td>France</td>
+                            <td>~25%</td>
+                            <td>Roman Catholicism</td>
+                            <td>Heavily secularised</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.85rem; font-style: italic; margin-top: 1rem;">Sources: Gallup International 2017 (68 countries); Pew Research Center 2025; Pew Global Christianity 2011.</p>
+            
+            <h3>The Colonial Construction of Filipino Faith</h3>
+            <p>Philippine Catholicism is not a European transplant. It is a synthetic religion built under conditions of conquest, doctrinal dilution, and strategic syncretism. The Spanish believed Filipinos were temperamentally unfit for the full responsibilities of the sacerdotal state, leading to secondary local leaders called fiscales who had minimal formal doctrinal training. The result was a faith transmitted as ritual performance rather than doctrinal understanding: Christians went to the Church, but the Church rarely went to the Christians.</p>
+            <p>Pre-colonial animism was not replaced but absorbed into Catholicism — most visibly in the devotion to anting-anting amulets, albularyo folk healers, and the near-veneration of santos that approaches idolatry. The result is a religion of extraordinary emotional intensity and extremely shallow doctrinal accountability.</p>
+            
+            <h3>Bahala Na: The Theology of Pacification</h3>
+            <p>The expression bahala na — come what may — derives from bathala na, bathala being the highest deity in pre-colonial animist faith. When Catholicism absorbed animism, it re-coded pre-colonial resignation as Christian acceptance of God's providence. The theological packaging of inequality as divine will served the colonial project precisely: acceptance of one's station as God's plan produced a pacified labour force.</p>
+            
+            <div class="callout">
+                Five centuries later, the same mechanism produces a population that accepts electricity overpricing, dynastic politics, and fiesta debt cycles as the natural order of things. This is not stupidity — it is a sophisticated adaptation to colonial power that has outlasted its original context, and now serves those who replaced the colonisers.
+            </div>
+            
+            <h3>The Church's Structural Complicity</h3>
+            <p>The Catholic Church holds the highest institutional trust in the Philippines at eighty percent. It is simultaneously a top stockholder in Bank of the Philippine Islands, San Miguel Corporation, and Ayala Corporation — companies controlled by oligarchic families the Church nominally opposes. The CBCP's 2025 Trillion Peso March, in which Cardinal David compared corruption to cancer and ordered church bells rung every Friday evening, represents the Church at its most prophetic. But this activism is episodic and structurally constrained by the financial co-dependence that the CBCP's own November 2025 guidance has now formally acknowledged.</p>
+        </article>
+
+        <!-- Section VI -->
+        <article class="section">
+            <div class="section-number">VI</div>
+            <h2>Philippine Catholicism in Comparative Perspective</h2>
+            <p>A comparison with Mexico and Spain — the two societies most directly connected to Philippine Catholicism through the colonial project — reveals the specific character of Philippine religious formation more clearly than any internal analysis alone.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>Philippines</th>
+                            <th>Mexico</th>
+                            <th>Spain</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>% Catholic</td>
+                            <td>~80%</td>
+                            <td>~78%</td>
+                            <td>~68%</td>
+                        </tr>
+                        <tr>
+                            <td>Weekly Mass attendance</td>
+                            <td>~41% (declining from 64% in 1991)</td>
+                            <td>~26%</td>
+                            <td>~17%</td>
+                        </tr>
+                        <tr>
+                            <td>Emotional intensity</td>
+                            <td>Extreme — flagellants, Black Nazarene processions</td>
+                            <td>High — Guadalupan pilgrimage</td>
+                            <td>Moderate and declining</td>
+                        </tr>
+                        <tr>
+                            <td>Doctrinal depth</td>
+                            <td>Shallow — fiscale problem; ritual without theology</td>
+                            <td>Moderate — missionary study</td>
+                            <td>High — centuries of formation</td>
+                        </tr>
+                        <tr>
+                            <td>Counter-symbol</td>
+                            <td>Absent — no insurgent religious icon</td>
+                            <td>Guadalupe as revolutionary banner (Hidalgo, Zapata)</td>
+                            <td>Secular / anticlerical tradition</td>
+                        </tr>
+                        <tr>
+                            <td>Liberation theology</td>
+                            <td>Episodic, crisis-driven (Marcos era)</td>
+                            <td>Deep and institutionally sustained</td>
+                            <td>Marginal</td>
+                        </tr>
+                        <tr>
+                            <td>Church–oligarch entanglement</td>
+                            <td>Severe financial co-dependence</td>
+                            <td>Significant but more contested</td>
+                            <td>Post-Franco, declining</td>
+                        </tr>
+                        <tr>
+                            <td>Secularisation</td>
+                            <td>Stable; irreligion 0.04%</td>
+                            <td>Moderate and growing</td>
+                            <td>Rapid post-Franco decline</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p>The single most important comparative finding: in Spain and Mexico, the faith was contested — by anarchists, by liberation theologians, by Zapata carrying the Virgin of Guadalupe's image into battle against oligarchs. That contestation forced the Church to respond, occasionally to choose against power. In the Philippines, the intellectual and political infrastructure capable of mounting that challenge was systematically suppressed.</p>
+            <p>The Virgin of Guadalupe represents the sharpest contrast. As a brown-skinned Marian figure appearing on a hill sacred to the Aztec goddess Tonantzin, she gave Mexican Catholicism a religious symbol that could be turned against the coloniser. The Philippines has no equivalent counter-symbol. The Black Nazarene and the Santo Niño express suffering and intercession. They do not generate revolutionary programmes.</p>
+        </article>
+
+        <!-- Section VII -->
+        <article class="section">
+            <div class="section-number">VII</div>
+            <h2>What Filipino Catholics Were Not Taught</h2>
+            <p>The shallowness of Philippine Catholicism has a specific shape — particular doctrines absent, particular ones retained — because it was deliberately engineered that way. The Spanish colonial Church feared that doctrinal depth would lead to Filipino independence and loss of revenue. What was installed was precisely the minimum needed to produce social compliance.</p>
+            
+            <h3>What Was Taught</h3>
+            <p>Filipino Catholics are well-formed in the vertical dimension of faith — the individual's relationship with God through the sacramental system. Ritual observance (Mass, confession, rosary, novenas), devotion to Mary and the saints as intercessors, fear of hell, hope of heaven. The Ten Commandments and mortal sins were among the first things transmitted in the 1593 Doctrina Christiana. They are memorised as liturgical formulas rather than internalised as living ethical frameworks. The scope of each commandment — especially the Seventh, which formally covers unjust pricing and unjust wages — was never taught at the popular level.</p>
+            
+            <h3>The Catastrophic Gap</h3>
+            <p>Jaime Bulatao's foundational 1966 study of split-level Christianity documented a Catholic education system that transmitted sacramental ritual and personal piety while systematically omitting the horizontal dimension of faith — the believer's moral obligations to society and social structures. This pattern persists. Academic research on Philippine Catholic formation reveals that concepts of solidarity, structural sin, and the common good — core elements of Catholic social teaching since Rerum Novarum (1891) — are largely absent from popular catechesis and secondary education.</p>
+            
+            <p>The consequence is a moral vocabulary that cannot name systemic injustice. Filipino Catholics learn that sin is personal — lying, adultery, theft of a neighbor's property — but not structural. They learn charity as individual donation, not solidarity as systemic obligation. When Catholic social teaching is encountered at university level, students frequently report initial confusion or resistance, having internalized an association between social justice language and communist ideology rather than recognizing it as doctrinal inheritance predating Marx by decades.</p>
+            
+            <p>The table below maps this systematic absence across seven core doctrinal categories, showing what Church teaching formally requires, what Filipino Catholics were actually taught, and the political consequence of each omission.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Doctrine</th>
+                            <th>Formal Catholic Teaching</th>
+                            <th>What Filipinos Were Taught</th>
+                            <th>Consequence of Absence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Solidarity</td>
+                            <td>Firm commitment to the common good; we are responsible for all (John Paul II)</td>
+                            <td>Charity — donate to the parish poor box</td>
+                            <td>Cannot recognise electricity overpricing as structural injustice; oligarch donation feels generous</td>
+                        </tr>
+                        <tr>
+                            <td>Common Good</td>
+                            <td>Sum of social conditions allowing everyone to reach fulfilment</td>
+                            <td>Family loyalty (utang na loob)</td>
+                            <td>Patron-client politics evaluated on personal benefit, not systemic harm</td>
+                        </tr>
+                        <tr>
+                            <td>Structural Sin</td>
+                            <td>Unjust structures are themselves sinful; charity without structural reform is insufficient (JPII)</td>
+                            <td>Sin is personal; confession manages individual wrongdoing</td>
+                            <td>Monopoly rents, dynastic laws, and inequality experienced as normal</td>
+                        </tr>
+                        <tr>
+                            <td>Restitution</td>
+                            <td>Reparation for injustice requires restitution before all else (CCC 2412)</td>
+                            <td>Donation to Church manages spiritual debt</td>
+                            <td>Villar PHP 615M donation feels like generosity, not 0.003% of an alleged $20B fraud</td>
+                        </tr>
+                        <tr>
+                            <td>CCC 2409</td>
+                            <td>Unjust prices and forcing up prices by exploiting ignorance = Seventh Commandment violation</td>
+                            <td>Thou shalt not steal = do not take your neighbour's property</td>
+                            <td>Electricity overpricing, port monopoly rents not experienced as theft</td>
+                        </tr>
+                        <tr>
+                            <td>Prophetic Tradition (OT)</td>
+                            <td>Amos, Isaiah, Micah demand structural justice; 'do justice, love kindness' (Micah 6:8)</td>
+                            <td>Creation, Fall, Exodus outline; prophets largely absent</td>
+                            <td>No theological framework for standing before power and naming structural sin</td>
+                        </tr>
+                        <tr>
+                            <td>The Magnificat</td>
+                            <td>God 'has brought down the powerful from their thrones and lifted up the lowly' (Luke 1:52)</td>
+                            <td>Mary as sorrowful, intercessory, miracle-working figure</td>
+                            <td>Mary deployed as pacifying mother, not revolutionary herald of structural reversal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p>The prophetic tradition of the Old Testament — Amos, Isaiah, Micah demanding structural justice — is essentially absent from Filipino Catholic popular catechesis. The catechism moves directly from Exodus to the Passion, skipping the prophets. Amos 5, condemning those who trample on the poor, and Isaiah 58, defining true fasting as loosing the chains of injustice, are the most operationally relevant passages in scripture for the Philippine condition — and they are, practically speaking, unknown.</p>
+            <p>The result is a coherent alternative moral framework compatible with oligarchic domination: transactional piety (religion as exchange with the divine — give to God, receive blessing); personalised morality without structural imagination (corruption is wrong when your enemy does it, necessary when your patron does it); suffering as spirituality rather than injustice (the Black Nazarene teaches endurance, not resistance); and charity instead of justice (the poor box instead of electricity pricing reform).</p>
+        </article>
+
+        <!-- Section VIII -->
+        <article class="section">
+            <div class="section-number">VIII</div>
+            <h2>Non-Catholic Religious Actors and Structural Inequality</h2>
+            <p>The Philippine religious landscape extends significantly beyond the Catholic Church. Three non-Catholic institutions warrant particular scrutiny: Iglesia ni Cristo (INC), El Shaddai, and the Kingdom of Jesus Christ led by Apollo Quiboloy. Each operates a distinct model of extraction and political instrumentalisation.</p>
+            
+            <h3>Iglesia ni Cristo: The Hereditary Vote Market</h3>
+            <p>The INC is a hereditary dynastic institution now in its third generation — Eduardo Manalo succeeding his father Erano and grandfather Felix; Eduardo's son Angelo elected Deputy Executive Minister in May 2025. It claims 2.8 million members in the Philippines, owns the PHP 7.8 billion Philippine Arena, and operates hospitals, a university, and a broadcasting network. Its finances are held collectively and opaque.</p>
+            <p>Econometric analysis published in Comparative Political Studies (Ravanilla, 2025) finds that for every ten-percent increase in INC voting-age members in a municipality, there is a 9.7 percentage point increase in vote share for INC-endorsed candidates — a near-mechanical conversion of membership into electoral power. Instructions are transmitted from central leadership to local ministers before elections. INC has endorsed candidates charged with plunder. The return: jobs, government appointments, and legal protection. Politicians donating cash for endorsements have become an open secret.</p>
+            <p>The Catholic oligarchs donate to the Church from the top down; the INC extracts from its members from the bottom up through tithes and commodification of the voting franchise, then converts what it collects into political currency traded with the same oligarchs the Catholic Church nominally criticises.</p>
+            
+            <h3>El Shaddai: The Prosperity Gospel Inside the Catholic Tent</h3>
+            <p>El Shaddai is formally Vatican-approved and diocese-linked but operationally indistinguishable from American Pentecostal prosperity gospel. Its founder, Brother Mike Velarde — a real estate developer who owns Amvel Land Development Corporation and Delta Broadcasting System — draws estimated three to nine million followers, primarily poor women, to weekly rallies. The theology: give tithes and God will return them tenfold. The movement collects $360,000–$400,000 monthly. Velarde's son is the wealthiest party-list congressman. In 2022, Velarde endorsed Bongbong Marcos. El Shaddai provides the sensation of empowerment to people who have none, extracts income from the poorest Catholics, and delivers their votes to the candidate most associated with continuity of the oligarchic system.</p>
+            
+            <h3>Quiboloy and the Kingdom of Jesus Christ: The Criminal Extreme</h3>
+            <p>Apollo Quiboloy founded the Kingdom of Jesus Christ in 1985, proclaiming himself the Appointed Son of God and Owner of the Universe. A US federal grand jury indicted him in November 2021 for sex trafficking of children, conspiracy, bulk cash smuggling, and money laundering. From 2002 to at least 2018, young women aged twelve to twenty-five — called pastorals — were coerced into sexual servitude through so-called night duties under threat of eternal damnation. The theological mechanism is documented with precision: the poorest Filipinos' terror of divine punishment weaponised as a tool of rape.</p>
+            <p>Quiboloy enjoyed political protection from President Duterte, who awarded him ABS-CBN broadcast frequencies. He was arrested in September 2024 following a two-week manhunt involving two thousand police and a dramatic compound standoff in Davao City.</p>
+            
+            <h3>The Aglipayan Church: The Counter-Tradition That Failed to Scale</h3>
+            <p>The Philippine Independent Church (IFI) is the great exception and the great tragedy of Philippine religious history. Born from the country's first labour union federation in 1902, co-founded by journalist-senator Isabelo de los Reyes, and led by excommunicated priest Gregorio Aglipay — who had sided with the anti-colonial revolution — the IFI connected religious independence from Spanish friars to economic independence from Spanish landlords. It is the Church the Philippines should have had.</p>
+            <p>It failed: stripped of its buildings by a 1909 Supreme Court ruling, fractured by doctrinal disputes into thirty-plus splinter groups, and repeatedly red-tagged as communist-adjacent for advocating peasants' rights. Today it counts approximately one percent of the population. The most prophetic organised Christian tradition in Philippine history was marginalised because it was prophetic.</p>
+        </article>
+
+        <!-- Section IX -->
+        <article class="section">
+            <div class="section-number">IX</div>
+            <h2>The Arithmetic of Extraction</h2>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Flow / Source</th>
+                            <th>Annual (USD)</th>
+                            <th>% GDP</th>
+                            <th>Direction & Beneficiary</th>
+                            <th>Comparative</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>OFW personal remittances (2024)</td>
+                            <td>$38.3B</td>
+                            <td>8.3%</td>
+                            <td>IN → Filipino families</td>
+                            <td>Largest single inflow</td>
+                        </tr>
+                        <tr>
+                            <td>OFW personal remittances (2025)</td>
+                            <td>$39.6B</td>
+                            <td>7.3%</td>
+                            <td>IN → families</td>
+                            <td>Record high</td>
+                        </tr>
+                        <tr>
+                            <td>Grant-equivalent ODA (annual avg.)</td>
+                            <td>~$1.6B</td>
+                            <td>0.4%</td>
+                            <td>IN → State</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Electricity rent extraction</td>
+                            <td>~$8B</td>
+                            <td>1.8%</td>
+                            <td>OUT → Aboitiz, SMC, Lopez</td>
+                            <td>21% of all OFW remittances</td>
+                        </tr>
+                        <tr>
+                            <td>Offshore untaxed elite yield</td>
+                            <td>~$4.5B</td>
+                            <td>1.0%</td>
+                            <td>OUT → Oligarchs offshore</td>
+                            <td>2.8× annual ODA</td>
+                        </tr>
+                        <tr>
+                            <td>Port overpricing / logistics rent</td>
+                            <td>~$1.5B</td>
+                            <td>0.3%</td>
+                            <td>OUT → Razon / ICTSI</td>
+                            <td>≈ all grant ODA</td>
+                        </tr>
+                        <tr style="background: rgba(163, 45, 45, 0.1);">
+                            <td><strong>Total oligarchic harm (midpoint)</strong></td>
+                            <td><strong>~$312B</strong></td>
+                            <td><strong>~70% GDP</strong></td>
+                            <td><strong>Accumulated multi-decade</strong></td>
+                            <td><strong>195 years of ODA to offset</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.85rem; font-style: italic; margin-top: 1rem;">Sources: BSP 2025; Lowy Institute Southeast Asia Aid Map 2024; Ateneo de Manila University Working Paper 2023-01 (Ravago); audit methodology estimates. All figures in current USD.</p>
+            
+            <p>The arithmetic is clarifying. Power oligarchs extract five times more annually than the Philippines receives in foreign grants. The Marcos family's estimated harm equals 3.7 years of total OFW remittances. Villar's alleged $14–20 billion SEC fraud equals nine to twelve years of grant ODA. The average OFW sends home approximately $17,500 per year; her family pays $400–800 per year above ASEAN benchmark electricity rates to the same oligarchic class her remittances prop up.</p>
+        </article>
+
+        <!-- Section X -->
+        <article class="section">
+            <div class="section-number">X</div>
+            <h2>The Three-Way Extraction System</h2>
+            <p>The evidence across all preceding sections converges on a single structural argument. The Filipino poor are being worked from both ends of the religious system simultaneously — and from within.</p>
+            
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--red);"><strong>From above:</strong> Catholic oligarchs donate to the Church from the top down, purchasing institutional legitimacy at 0.003% of their net worth, while the Church's investment portfolios in their companies generate returns that further entrench the relationship.</li>
+                
+                <li style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--red);"><strong>From below:</strong> The INC extracts from its members through tithes and the commodification of their voting franchise, then converts what it collects into political currency traded with the same oligarchs the Catholic Church nominally criticises.</li>
+                
+                <li style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--red);"><strong>From within:</strong> The theology of bahala na, instilled over five centuries, re-codes the experience of exploitation as divine will, suppressing the cognitive dissonance that would otherwise drive collective action.</li>
+            </ul>
+            
+            <p>The fiesta system completes the circuit. Families borrow money to honour their patron saint — a financial drain at retail scale across every barangay — while paying above-ASEAN electricity rates to oligarchic power monopolies and sending daughters to the Gulf to cover the gap. The Church collects from all of them. The oligarchs extract from all of them. The theological infrastructure that makes this feel like the natural order of the universe was installed by the same colonial project that gave the Zobel de Ayala family their original land grants.</p>
+            
+            <div class="callout">
+                The correct investigative framing is not that oligarchs are hypocrites. It is that the Philippine system was specifically designed to make the coexistence of intense devotion and extreme exploitation not merely possible but invisible — to those practising it and to those subjected to it.
+            </div>
+            
+            <p>The colonial installation of ritual without doctrine, the absorption of animist fatalism into Catholic theology, the Church's financial dependence on oligarchic donations, and the INC's conversion of working-class faith into electoral currency are not aberrations. They are the system.</p>
+        </article>
+    </main>
+
+    <!-- Sources Section -->
+    <section class="sources">
+        <div class="sources-inner">
+            <h2>Principal Sources</h2>
+            
+            <h3>Doctrine and Theology</h3>
+            <ul>
+                <li>Catechism of the Catholic Church (CCC), paragraphs 1849, 1866, 1867, 1868, 2409. Vatican City.</li>
+                <li>Vatican Social Sin statements, 2008.</li>
+                <li>CBCP Episcopal Commission on Doctrine of the Faith. Guidance on tainted donations. October 2025.</li>
+                <li>Bulatao, Jaime SJ. <em>Split-Level Christianity</em>. Ateneo de Manila, 1966.</li>
+            </ul>
+            
+            <h3>Religiosity and Comparative Religion</h3>
+            <ul>
+                <li><a href="https://www.pewresearch.org/religion/" target="_blank" style="color: var(--red); text-decoration: underline;">Pew Research Center</a>. Religious Importance and Affiliation. May 2025.</li>
+                <li><a href="https://www.pewresearch.org/religion/2011/12/19/global-christianity-exec/" target="_blank" style="color: var(--red); text-decoration: underline;">Pew Research Center</a>. Global Christianity. December 2011.</li>
+                <li><a href="https://www.gallup-international.com/" target="_blank" style="color: var(--red); text-decoration: underline;">Gallup International</a>. Survey on religiosity in 68 countries. 2017.</li>
+                <li>Harvard Religious Literacy Project. Catholicism in the Philippines; Ferdinand Marcos entries.</li>
+                <li>MDPI Religions. New Religious Movements in the Philippines. April 2025.</li>
+                <li>MDPI Religions. Understanding Folk Religiosity in the Philippines. 2021.</li>
+                <li>Christianity Today. Fatalism in the Philippines. December 2023.</li>
+            </ul>
+            
+            <h3>Philippine Political Economy and Oligarchy</h3>
+            <ul>
+                <li><a href="https://www.forbes.com/philippines-billionaires/" target="_blank" style="color: var(--red); text-decoration: underline;">Forbes Asia</a>. Philippines' 50 Richest. 2025.</li>
+                <li><a href="https://psa.gov.ph/" target="_blank" style="color: var(--red); text-decoration: underline;">PSA</a>. 2023 Annual Family Income and Expenditure Survey. 2024.</li>
+                <li><a href="https://www.bsp.gov.ph/" target="_blank" style="color: var(--red); text-decoration: underline;">BSP</a>. Cash Remittances: Full Year 2024 and 2025. bsp.gov.ph.</li>
+                <li>Ravago, M.V. High Philippine Electricity Prices. Ateneo Working Paper 2023-01.</li>
+                <li><a href="https://www.sec.gov.ph/" target="_blank" style="color: var(--red); text-decoration: underline;">SEC Philippines</a>. Criminal Complaint vs. Villar Land Holdings Corp. et al. January 2026.</li>
+                <li>PCGG. Recovery of Marcos ill-gotten wealth: cumulative reports 1986–2025.</li>
+                <li>IBON Foundation. Economic damage of Marcos era. 2021.</li>
+                <li><a href="https://www.icij.org/investigations/pandora-papers/" target="_blank" style="color: var(--red); text-decoration: underline;">ICIJ</a>. Pandora Papers: Philippines entries. 2021.</li>
+                <li>Bonoan & Dressel. Constitutional Change and Oligarchic Politics in the Philippines. SAGE 2026.</li>
+                <li>Independent Research Consultancy. <em>The Anatomy of Extreme Inequality: Philippines 2026 — A Socio-Economic and Human Rights Audit of the Philippines' Wealthiest Families</em>. Confidential Investigative Journalism Research File. March 2026. [Primary source for SHS framework, harm estimates, wealth audit methodology, and family case studies throughout this report.]</li>
+            </ul>
+            
+            <h3>Non-Catholic Religious Institutions</h3>
+            <ul>
+                <li>Ravanilla, N. Religious Sect Endorsements on Vote Choice: Evidence from INC. <em>Comparative Political Studies</em>, SAGE 2025.</li>
+                <li><a href="https://www.rappler.com/" target="_blank" style="color: var(--red); text-decoration: underline;">Rappler</a>. Will scandals erode Iglesia ni Cristo bloc vote? 2016.</li>
+                <li><a href="https://www.npr.org/" target="_blank" style="color: var(--red); text-decoration: underline;">NPR</a>. Apollo Quiboloy: pastor on the FBI Most Wanted List. September 2024.</li>
+                <li><a href="https://www.rappler.com/" target="_blank" style="color: var(--red); text-decoration: underline;">Rappler</a>. Apollo Quiboloy investigative series. 2021–2024.</li>
+                <li>US District Court, Central District of California. <em>United States v. Quiboloy et al.</em> November 2021.</li>
+                <li>Institute for Nationalist Studies. INC, Bloc Voting, and the Neoliberal State. December 2025.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>The Anglophone Blind Spot · Geopolitics · Energy · Defence</div>
+        <div class="footer-divider">━━━</div>
+        <div>© The Anglophone Blind Spot | April 2026</div>
+    </footer>
+
+    <script>
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add subtle parallax effect to cover
+        window.addEventListener('scroll', () => {
+            const cover = document.querySelector('.cover');
+            const scrolled = window.pageYOffset;
+            if (scrolled < window.innerHeight) {
+                cover.style.transform = `translateY(${scrolled * 0.3}px)`;
+                cover.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+            }
+        });
+    </script>
+</body>
+</html>
