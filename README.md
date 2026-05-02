@@ -1,136 +1,138 @@
-Faith, Power and Inequality
-The Philippine Oligarchy, Religion and Structural Harm
-A research report by The Anglophone Blind Spot | April 2026
+# Faith, Power and Inequality
+
+**An investigative report on religious institutions and oligarchic extraction in the Philippines**
+
+Published by [The Anglophone Blind Spot](https://ivanapark1.substack.com)  
+Author: Ivana Park  
+Date: April 2026
+
 ---
-Overview
-This repository contains a comprehensive investigative research report examining the intersection of concentrated wealth, organized religion, and structural harm in the Philippines. The report presents one of contemporary political economy's most striking paradoxes: a society of exceptional religious devotion that is simultaneously one of the most unequal in Asia.
-Key Findings
-$312B – $450B total harm attributed to oligarchic families (≈70% of 2024 GDP)
-75,000 – 110,000 lives lost to wealth concentration
-50/50 Forbes-listed oligarchic families — all nominally Roman Catholic
-5th globally — Philippines' ranking among most religious nations (Gallup, 68 countries)
-0.04% irreligion rate — without parallel in the Catholic world
----
-Report Structure
-Sections
-Introduction — The paradox of faith and inequality
-The Scale of Wealth Concentration and Harm — Quantifying oligarchic extraction
-All Fifty Families: Nominally Catholic — Religious affiliation analysis
-Mapping Conduct Against Catholic Doctrine — Catechism violations documented
-Philippine Religiosity: The Global Picture — Comparative religious intensity
-Philippine Catholicism in Comparative Perspective — Mexico and Spain comparisons
-What Filipino Catholics Were Not Taught — Systematic doctrinal gaps
-Non-Catholic Religious Actors — INC, El Shaddai, Quiboloy
-The Arithmetic of Extraction — OFW remittances vs. oligarchic rents
-The Three-Way Extraction System — Structural analysis
----
-File Information
-Primary Document
-faith_power_inequality.html — Interactive HTML research document
-Fully responsive design
-The Anglophone Blind Spot standard layout
-Warm editorial palette (ink #1a1a18, red #A32D2D)
-Premium typography (Playfair Display, Source Serif 4, JetBrains Mono)
-Interactive data tables and visualizations
-Live hyperlinked sources
-Smooth animations and parallax effects
-Design System
-Color Palette:
-```css
---ink: #1a1a18          /* Primary text */
---red: #A32D2D          /* Brand accent */
---bg: #fafaf7           /* Background */
---border: #e8e6e1       /* Borders */
---accent-warm: #d4a574  /* Warm highlights */
---accent-muted: #8a7968 /* Muted accents */
+
+## Overview
+
+This report examines how religious institutions in the Philippines sustain and legitimize oligarchic economic systems through theological frameworks, financial entanglements, and political alliances. It provides forensic analysis of the intersection between mass devotion and extreme inequality in the world's most Catholic country in Asia.
+
+## Key Findings
+
+1. **The Philippines is the most Catholic and most religious country in Asia, yet sustains one of the region's most entrenched oligarchic systems.** 86% Catholic, 88% say religion is "very important," yet 40 families control 76% of publicly listed corporations.
+
+2. **Catholic doctrine defines "social sin" as structures causing systemic harm—yet the Philippine Church accepts funding from the architects of those structures.** Oligarchs donate at 0.003% of net worth to purchase institutional legitimacy.
+
+3. **Colonial theology installed a fatalistic worldview (bahala na) that re-codes exploitation as divine will,** suppressing collective action against injustice.
+
+4. **Non-Catholic institutions extract through different mechanisms but serve the same oligarchic order.** Iglesia ni Cristo commodifies its 2–3 million-member voting bloc; Apollo Quiboloy's Kingdom of Jesus Christ extracted tithes and forced labour.
+
+5. **The arithmetic of extraction:** Power oligarchs extract $8B/year (21% of OFW remittances). Marcos family harm: $165–230B. Villar's SEC fraud: $14–20B (9–12 years of grant ODA).
+
+6. **The system works from above, below, and within simultaneously,** creating a three-way extraction mechanism that makes extreme devotion and extreme exploitation invisible to both practitioners and victims.
+
+## Report Structure
+
+### Sections
+
+1. **The Paradox of Philippine Catholicism** — How intense religiosity coexists with entrenched oligarchy
+2. **The Structural Theology of Exploitation** — Colonial installation of bahala na fatalism
+3. **Social Sin and Structural Harm** — Church doctrine vs. Church practice
+4. **The Church's Financial Relationship with Oligarchs** — Donations, investments, and institutional capture
+5. **Non-Catholic Extraction: Iglesia ni Cristo** — Bloc voting and the commodification of democratic participation
+6. **Charismatic Extraction: Quiboloy and KJC** — Forced labour, sex trafficking, and political protection
+7. **The Arithmetic of Extraction** — Quantifying oligarchic harm across sectors
+8. **The Three-Way Extraction System** — How the system operates from above, below, and within
+
+## Methodology
+
+This investigation draws on:
+
+- **Canonical Catholic doctrine** (Catechism paragraphs 1849, 1866–1868; Vatican social sin statements)
+- **Economic data** from Philippine Statistics Authority, Bangko Sentral ng Pilipinas, Forbes Asia
+- **Audit methodology** from Independent Research Consultancy's 2026 Philippines wealth audit
+- **Academic research** (Pew Research, Ateneo de Manila, SAGE journals)
+- **Court documents** (US District Court indictments, SEC Philippines criminal complaints)
+- **Investigative journalism** (Rappler, NPR, ICIJ Pandora Papers)
+
+All estimates are clearly labeled and sourced. Financial calculations methodology is disclosed in Section 07.
+
+## Data Sources
+
+### Primary sources include:
+- Philippine Statistics Authority (PSA) — Income inequality data
+- Bangko Sentral ng Pilipinas (BSP) — OFW remittance flows
+- Forbes Asia — Wealth estimates for top 50 Philippine families
+- SEC Philippines — Villar fraud case documentation
+- PCGG — Marcos ill-gotten wealth recovery reports
+- Pew Research Center — Religious importance surveys
+- Independent Research Consultancy — 2026 oligarchy audit
+
+Full source list available in the References section of the report.
+
+## Key Statistics
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| Catholic population | 86% | Pew 2025 |
+| Religion "very important" | 88% | Pew 2025 |
+| Corporate control by top 40 families | 76% | IRC 2026 |
+| Annual power sector rent extraction | $8B | Ravago 2023, IRC 2026 |
+| Marcos family cumulative harm | $165–230B | PCGG, IBON, IRC 2026 |
+| Villar SEC fraud (alleged) | $14–20B | SEC Philippines 2026 |
+| INC estimated membership | 2–3M | Institute for Nationalist Studies 2025 |
+| Oligarchic donation as % net worth | 0.003% | IRC 2026 analysis |
+
+## Technical Notes
+
+### Format
+- HTML5 document with embedded CSS
+- Responsive design (mobile-optimized)
+- Accessible typography (18px base, 1.75 line-height)
+- Print-friendly styling
+
+### Design System
+- **Fonts:** Playfair Display (display), Source Serif 4 (body), JetBrains Mono (data/metadata)
+- **Color palette:** Ink (#1a1a18), Red (#A32D2D), Amber (#854F0B), Green (#2D6A1F)
+- **Layout:** Sticky masthead, full-width cover, 68ch body text measure
+
+### Browser Compatibility
+- Modern browsers (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
+- Graceful degradation for older browsers
+- No JavaScript dependencies for core content
+
+## Usage
+
+### Viewing the Report
+Simply open `faith_power_inequality_converted.html` in any modern web browser.
+
+### Citation
 ```
-Typography:
-Headlines: Playfair Display (900 weight)
-Body: Source Serif 4
-Metadata: JetBrains Mono
----
-Usage
-Viewing the Report
-Clone this repository:
-```bash
-   git clone https://github.com/yourusername/faith-power-inequality.git
-   ```
-Open `faith_power_inequality.html` in any modern web browser
-No build process or dependencies required — pure HTML/CSS/JS
-Customization
-The document uses CSS variables for easy theming. Modify the `:root` section in the `<style>` tag to adjust:
-Color scheme
-Typography
-Spacing
-Layout breakpoints
----
-Methodology
-All financial estimates carry confidence intervals and are sourced to methodological origins. All harm figures are analytical estimates, not legal findings. All individuals are presumed innocent unless convicted.
-Primary Sources
-Wealth Data: Forbes Asia, PSA, ICIJ Pandora Papers
-Doctrine: Catechism of the Catholic Church (CCC), Vatican statements
-Religiosity: Pew Research Center, Gallup International
-Economic Analysis: BSP, Ateneo de Manila working papers
-Legal Proceedings: SEC Philippines, US Federal Courts
-Full references available in the document's Sources section.
----
-About The Anglophone Blind Spot
-The Anglophone Blind Spot is a newsletter focused on geopolitics, energy, and defence, with particular attention to regions and issues underrepresented in English-language coverage.
-Focus Areas:
-Geopolitical analysis
-Energy market dynamics
-Defence and security
-Investigative journalism
-Southeast Asian affairs
----
-Technical Specifications
-Format: Semantic HTML5
-Styling: Pure CSS3 (no frameworks)
-Interactivity: Vanilla JavaScript
-Fonts: Google Fonts CDN
-Compatibility: All modern browsers
-Mobile: Fully responsive
-Accessibility: Semantic markup, ARIA-friendly
-Performance: Optimized animations, lazy loading
----
-License
-© The Anglophone Blind Spot | April 2026
-Research Content: All rights reserved. This report may be cited with proper attribution in academic and journalistic work.
-Code/Design: The HTML template structure and design system may be adapted for non-commercial educational purposes with attribution.
----
-Contact
-For questions, corrections, or source verification inquiries:
-Newsletter: The Anglophone Blind Spot
-Issues: Please use GitHub Issues for technical problems or typos
-Research Inquiries: Contact via newsletter platform
----
-Citation
-When citing this work:
+Park, Ivana. (2026). Faith, Power and Inequality: How religious institutions 
+and oligarchic elites sustain extractive economic systems in the Philippines. 
+The Anglophone Blind Spot. April 2026.
 ```
-Park, Ivana. "Faith, Power and Inequality: The Philippine Oligarchy, 
-Religion and Structural Harm." The Anglophone Blind Spot, April 2026.
-```
+
+### License
+© The Anglophone Blind Spot, 2026. All rights reserved.
+
+This work is published for journalistic and educational purposes. Excerpts may be quoted with proper attribution under fair use doctrine. Redistribution requires permission.
+
+## About The Anglophone Blind Spot
+
+The Anglophone Blind Spot is an independent investigative journalism newsletter covering geopolitics, energy, and defence with a focus on regions underreported in English-language media.
+
+**Subscribe:** [ivanapark1.substack.com](https://ivanapark1.substack.com)
+
+## Contact
+
+For corrections, additional sources, or inquiries:
+- **Email:** [Contact via Substack]
+- **Substack:** [@ivanapark1](https://ivanapark1.substack.com)
+
+## Disclaimer
+
+All financial estimates are presented as ranges and clearly labeled as estimates where not directly sourced from official documents. Methodology for calculations is fully disclosed in Section 07 of the report. 
+
+This investigation represents the author's analysis of publicly available information, court documents, academic research, and investigative journalism sources. Conclusions are based on documented evidence and disclosed methodology.
+
 ---
-Acknowledgments
-This report draws on:
-Wealth audit methodology from Independent Research Consultancy
-Academic foundations from Jaime Bulatao SJ (split-level Christianity framework)
-Econometric analysis from Ateneo de Manila University
-Investigative research from Rappler, ICIJ, and Philippine civil society organizations
----
-Version History
-v1.0 (April 2026) — Initial publication
-10 sections, 50+ footnoted sources
-6 data tables, interactive HTML format
-Comparative analysis (Philippines, Mexico, Spain)
-Doctrine-conduct mapping framework
----
-Repository Structure
-```
-faith-power-inequality/
-├── faith_power_inequality.html    # Main interactive document
-├── README.md                       # This file
-└── LICENSE.txt                     # License information
-```
----
-Built with precision. Researched with rigor. Published for accountability.
+
+**The Anglophone Blind Spot** · Geopolitics · Energy · Defence  
+Independent investigative journalism  
+April 2026
